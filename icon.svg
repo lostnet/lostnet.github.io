@@ -1,0 +1,9 @@
+<svg  width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+<style>
+text {font-size:60px; fill:red}
+text.lost {fill:black}
+</style>
+	<circle cx="100" cy="100" r="98" stroke-width="5" stroke="black" fill-opacity="0.1" />
+	<text class="lost" x="10" y="100" textLength="180" >lost</text>
+	<text class="net" x="10" y="140" textLength="180" >net</text>
+		</svg>
