@@ -3,7 +3,21 @@
 text {font-size:60px; fill:red}
 text.lost {fill:black}
 </style>
+	
 	<circle cx="100" cy="100" r="98" stroke-width="5" stroke="black" fill-opacity="0.1" />
-	<text class="lost" x="10" y="100" textLength="180" >lost</text>
-	<text class="net" x="10" y="140" textLength="180" >net</text>
+	<path id="glassesPath" d="M10,100 L190,100" stroke="black" fill="none" transform="translate(0,-30)">
+<animate attributeName="d" values="M10,100 L190,100;M10,100 L60,80 L180,100;M10,100 L190,100" dur="4s" repeatCount="indefinite" />
+	</path>
+	<path id="lostPath" d="M10,100 L190,100" stroke="none" fill="none">
+<animate attributeName="d" values="M10,100 L190,100;M10,100 L60,80 L180,100;M10,100 L190,100" dur="4s" repeatCount="indefinite" />
+	</path>
+	<path id="netPath" d="M10,140 L190,140" stroke="red" fill="none">
+<animate attributeName="d" values="M10,140 L190,140;M10,140 L80,140 L90,150 L120,130 L130,140 L180,140;M10,140 L100,135 L180,140;M10,140 L90,150 L180,140;M10,140 L190,140" dur="1s" repeatCount="indefinite" />
+</path>
+	<text class="lost" textLength="170">
+<textPath href="#lostPath" textLength="170">
+lost</textPath></text>
+	<text class="net" textLength="170">
+<textPath href="#netPath" textLength="170">
+net</textPath></text>
 		</svg>
