@@ -1,0 +1,294 @@
+<html>
+  <head>
+    <title>Happy Birthday</title>
+    <meta name="author" content="Will Young" />
+  </head>
+  <body>
+    <style>
+      .button {
+        height: 1.2em;
+      }
+      .mini {
+        max-height: 1.4em;
+        overflow: hidden;
+      }
+      .mini:hover,
+      .mini:focus,
+      .mini:active {
+        max-height: inherit;
+      }
+    </style>
+    <svg
+      id="svg"
+      height="500"
+      width="400"
+      version="1.2"
+      onclick="shuffle()"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+    >
+      <style>
+        .box {
+          fill: green;
+          rx: 1;
+        }
+        .box.back {
+          fill: brown;
+          rx: 1;
+        }
+        .ribbon {
+          fill: yellow;
+          stroke: yellow;
+          rx: 1;
+        }
+        .ribbon.bow {
+          fill: none;
+          stroke-width: 3;
+        }
+        .hide {
+          display: none;
+        }
+      </style>
+      <g class="world" id="world" transform="translate(100 50)">
+        <g class="geschenkli">
+          box
+          <polygon
+            class="box back"
+            points="0,200 45,175 45,240 168,300"
+          ></polygon>
+          <polygon
+            class="box back"
+            points="45,175 208,170 208,240 45,240"
+          ></polygon>
+
+          <g class="lower">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              from="0 110 100"
+              to="360 60 70"
+              dur="10s"
+              repeatCount="indefinite"
+              begin="world.click"
+            />
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              from="0 110"
+              to="0 100"
+              dur="100s"
+              end="world.click"
+              repeatCount="1"
+            />
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              from="0 110"
+              to="0 0"
+              dur="10s"
+              begin="world.click"
+              repeatCount="1"
+            />
+            <ellipse
+              cx="110"
+              cy="100"
+              rx="80"
+              ry="69"
+              stroke-width="1"
+              stroke="black"
+              fill-opacity="0.1"
+            />
+            <path
+              id="glassesPath"
+              d="M10,100 L190,100"
+              stroke="none"
+              fill="none"
+              transform="translate(0,-30)"
+            >
+              <animate
+                attributeName="d"
+                values="M10,100 L190,100;M10,100 L60,80 L180,100;M10,100 L190,100"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <path id="lostPath" d="M30,100 L190,100" stroke="none" fill="none">
+              <animate
+                attributeName="d"
+                values="M50,100 L190,100;M52,100 L60,80 L180,100"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <path id="netPath" d="M80,140 L190,140" stroke="red" fill="none">
+              <animate
+                attributeName="d"
+                values="M85,140 L150,140;M85,140 L90,140 L90,150 L120,130 L130,140 L180,140;M50,140 L100,135 L170,140;M50,140 L90,150 L170,140"
+                dur="1s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <text class="lost" textLength="130">
+              <textPath href="#lostPath" textLength="130">
+                Happy Birthday
+              </textPath>
+            </text>
+            <text class="net" textLength="60">
+              <textPath href="#netPath" textLength="60">Gidda</textPath>
+            </text>
+          </g>
+
+          <rect y="200" class="box" width="168" height="100"></rect>
+          <rect y="200" x="80" class="ribbon" width="16" height="100"></rect>
+          <polygon
+            class="box"
+            points="168,200 208,170 208,240 168,300"
+          ></polygon>
+          <polygon
+            class="ribbon"
+            points="188,185 192,182 192,264 188,270"
+          ></polygon>
+          <rect
+            y="180"
+            x="188"
+            class="hide ribbon"
+            width="8"
+            height="90"
+          ></rect>
+        </g>
+        <g class="lid" transform="translate(0 -200)">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="0 -6"
+            to="0 -9"
+            dur=".4s"
+            end="world.click"
+            repeatCount="indefinite"
+          />
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="0 0"
+            to="0 -200"
+            dur="5s"
+            begin="world.click"
+            repeatCount="1"
+          />
+          <rect y="170" class="box lid" width="168" height="30"></rect>
+          <rect y="170" x="80" class="ribbon" width="16" height="30"></rect>
+          <polygon
+            class="box"
+            points="168,170 208,140 208,170 168,200"
+          ></polygon>
+          <polygon
+            class="ribbon"
+            points="188,155 192,152 192,182 188,184"
+          ></polygon>
+          <polygon
+            class="box lid"
+            points="0,170 168,170 208,140 55,145"
+          ></polygon>
+          <polygon
+            class="ribbon"
+            points="36,152 192,158 191,152 28,158"
+          ></polygon>
+          <polygon
+            class="ribbon"
+            points="80,170 96,170 116,143 132,143"
+          ></polygon>
+          <g transform="translate(110 156) scale(1 .35)">
+            <path id="bow" class="ribbon bow" d="M 0,0 A 16,10 10,0,0 50,30" />
+            <use href="#bow" transform="rotate(120 0 0)" />
+            <use href="#bow" transform="rotate(240 0 0)" />
+          </g>
+        </g>
+      </g>
+    </svg>
+    <script>
+      if (!document.querySelector("#favicon"))
+        document.head.insertAdjacentHTML(
+          "beforeend",
+          `
+	   <link id="favicon" rel="icon" href="data:image/svg+xml;base64,${btoa(
+       document.querySelector("#svg").outerHTML
+     )}" type="image/svg+xml">
+				`
+        );
+      function addSave() {
+        let dom = document.cloneNode(document.documentElement);
+        dom
+          .querySelectorAll(".noSave")
+          .forEach((el) => el.parentElement.removeChild(el));
+        let url = URL.createObjectURL(
+          new Blob([dom.documentElement.outerHTML], { type: "text/html" })
+        );
+        if (!document.querySelector("#save"))
+          document
+            .querySelector("#audiosetup")
+            .insertAdjacentHTML("beforeend", `<a id="save" download>save</a>`);
+        document.querySelector("#save").setAttribute("href", url);
+      }
+      let mr;
+      function record() {
+        if (!mr) {
+          document.querySelector("#record").innerHTML = "stop";
+          navigator.mediaDevices
+            .getUserMedia({ audio: true })
+            .then((mstream) => {
+              console.error(mstream);
+              mr = new MediaRecorder(mstream);
+              mr.start();
+            });
+        } else {
+          document.querySelector("#record").innerHTML = "record";
+          mr.stop();
+
+          mr.ondataavailable = ({ data }) => {
+            //let url = URL.createObjectURL(data);
+            let f = new FileReader();
+            f.readAsDataURL(data);
+            f.onloadend = () => {
+              document
+                .querySelector("#playlist")
+                .insertAdjacentHTML(
+                  "beforeend",
+                  `<audio src=${f.result} controls="">`
+                );
+              mr = false;
+              addSave();
+            };
+          };
+        }
+      }
+      function shuffle() {
+        let player = document.querySelector("#player");
+        if (!player) {
+          document.body.insertAdjacentHTML(
+            "beforeend",
+            `
+    <audio id="player" class="noSave" autoplay="" autobuffer="" controls onended="shuffle()"></audio>
+    <div id="audiosetup" class="mini noSave">
+      <button id="record" onclick="record()">record</button>
+    </div>`
+          );
+          player = document.querySelector("#player");
+        }
+        let playlist = document.querySelectorAll("#playlist audio");
+        let next = Math.floor(Math.random() * playlist.length);
+        if (playlist[next]) player.setAttribute("src", playlist[next].src);
+      }
+    </script>
+    <div id="playlist" class="mini">
+      <div>
+        <button title="audio clips">+</button>
+      </div>
+    </div>
+  </body>
+</html>
